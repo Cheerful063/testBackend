@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 项目维护对象 mes_project
  * 
  * @author neuedu
- * @date 2022-07-07
+ * @date 2026-11-19
  */
 @ApiModel("项目维护")
 public class MesProject extends BaseEntity
@@ -23,6 +23,7 @@ public class MesProject extends BaseEntity
 
     /** 编号 */
     @ApiModelProperty("编号")
+    @Excel(name = "编号")
     private Long id;
 
     /** 项目名 */
@@ -49,12 +50,11 @@ public class MesProject extends BaseEntity
 
     /** 项目介绍 */
     @ApiModelProperty("项目介绍")
-    //@Excel(name = "项目介绍")
     private String description;
 
     /** 项目状态 */
     @ApiModelProperty("项目状态")
-    @Excel(name = "项目状态", dictType="project_status")
+    @Excel(name = "项目状态")
     private String status;
 
     public void setId(Long id) 

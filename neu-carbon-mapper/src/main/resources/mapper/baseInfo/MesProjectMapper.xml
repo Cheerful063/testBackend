@@ -22,6 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectMesProjectVo"/>
         <where>  
             <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="leader != null  and leader != ''"> and leader = #{leader}</if>
             <if test="params.beginStartDate != null and params.beginStartDate != '' and params.endStartDate != null and params.endStartDate != ''"> and start_date between #{params.beginStartDate} and #{params.endStartDate}</if>
             <if test="params.beginEndDate != null and params.beginEndDate != '' and params.endEndDate != null and params.endEndDate != ''"> and end_date between #{params.beginEndDate} and #{params.endEndDate}</if>
             <if test="status != null  and status != ''"> and status = #{status}</if>
